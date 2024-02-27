@@ -21,7 +21,7 @@ def display(vehicles_list):
 
 
 def info(vehicles_list):
-
+    #print (vehicle info)
     
     
     
