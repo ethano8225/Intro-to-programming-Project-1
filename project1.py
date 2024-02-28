@@ -24,20 +24,19 @@ while True:
         break
     ''' BEGIN MAKING YOUR CODE HERE '''
     if option=="1":
-        test1()
-    """if option=="2":
-        
+        test1
+    if option=="2":
+        test2
     if option=="3":
-        """
+        test3
     if option=="4":
-       call test 4    
-"""
+       test4    
     if option=="5":
-        
+        test5
     if option=="6":            
-        
+        test6
     if option=="7":
-    """
+        test7
 
 
 
