@@ -1,6 +1,6 @@
 '''----------------Import Modules----------------'''
 import dealer_tool as dealer
-import test1
+from test1 import *
 import test2
 import test3
 import test4
@@ -24,8 +24,8 @@ while True:
         break
     ''' BEGIN MAKING YOUR CODE HERE '''
     if option=="1":
-        test1
-    if option=="2":
+        exec(test1)
+    """if option=="2":
         test2
     if option=="3":
         test3
@@ -36,7 +36,7 @@ while True:
     if option=="6":            
         test6
     if option=="7":
-        test7
+        test7"""
 
 
 
