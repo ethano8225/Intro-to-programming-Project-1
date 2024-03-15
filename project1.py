@@ -29,9 +29,9 @@ while True:
     if option=="6":            
         test6"""
     if option=="7":
-        from dealer_tool import *
+        from dealer_tool import dealer
         car = int(input("Which vehicle do you want to discount: "))
-        vehicles = carlist(car+1)
+        vehicles = dealer.carlist(car+1)
         discount = input("What percent discount (0-100): ")   
         print(car)
         #new_discounted_price=vehicle(car). want to replace price with discounted price
