@@ -7,16 +7,16 @@ print("Dealership Vehicle Management Tool")
 print("==================================")
 print("")
 
-vehicle1 =["Toyota",    "Camry",    "2018","45,000","20,000"]
-vehicle2 =["Ford",      "Escape",   "2019","30,000","23,500"]
-vehicle3 =["Honda",     "Accord",   "2017","60,000","16,200"]
-vehicle4 =["Chevrolet", "Silverado","2020","25,000","41,000"]
-vehicle5 =["BMW",       "3 Series", "2016","60,000","20,500"]
-vehicle6 =["Nissan",    "Rogue",    "2019","40,000","17,800"]
-vehicle7 =["Hyundai",   "Sonata",   "2018","42,000","16,500"]
-vehicle8 =["Jeep",      "Wrangler", "2021","15,000","32,000"]
-vehicle9 =["Ford",      "Mustang",  "2015","50,000","22,000"]
-vehicle10=["Volkswagen","Golf",     "2017","38,000","17,800"]
+vehicle1 =["Toyota",    "Camry",    "2018","45000","20000"]
+vehicle2 =["Ford",      "Escape",   "2019","30000","23500"]
+vehicle3 =["Honda",     "Accord",   "2017","60000","16200"]
+vehicle4 =["Chevrolet", "Silverado","2020","25000","41000"]
+vehicle5 =["BMW",       "3 Series", "2016","60000","20500"]
+vehicle6 =["Nissan",    "Rogue",    "2019","40000","17800"]
+vehicle7 =["Hyundai",   "Sonata",   "2018","42000","16500"]
+vehicle8 =["Jeep",      "Wrangler", "2021","15000","32000"]
+vehicle9 =["Ford",      "Mustang",  "2015","50000","22000"]
+vehicle10=["Volkswagen","Golf",     "2017","38000","17800"]
 defaultVehiclesList=[vehicle1,vehicle2,vehicle3,vehicle4,vehicle5,vehicle6,vehicle7,vehicle8,vehicle9,vehicle10]
 newVehicles = []
 
@@ -39,18 +39,22 @@ while True:
         test3"""
     if option=="4":
         print("\n****TEST the add_new_vehicle function****")
-        vehicles=add_new_vehicle(vehicles) # sends current vehicle list to add_new... function, should return same list 
-        display(vehicles)                  # WITH extra vehicle added    
+        vehicles=dealer.add_new_vehicle(vehicles) # sends current vehicle list to add_new... function, should return same list 
+        dealer.display(vehicles)                  # WITH extra vehicle added    
     """if option=="5":
         test5
     if option=="6":            
         test6"""
     if option=="7":
-        from dealer_tool import dealer
-        car = int(input("Which vehicle do you want to discount: "))
-        vehicles = dealer.carlist(car+1)
-        discount = input("What percent discount (0-100): ")   
-        print(car)
+        currentVehiclesList = (defaultVehiclesList + newVehicles)
+        carNumber = int(input("Which vehicle do you want to discount: "))-1
+        discount = int(input("What percent discount (0-100): "))  
+        selectedVehicle = currentVehiclesList[carNumber]
+        priceVehicle = selectedVehicle[4]
+        priceVehicle= int(priceVehicle)
+        newprice=int(priceVehicle-(priceVehicle*discount/100))
+        selectedVehicle[4]=str(newprice)
+        print(currentVehiclesList[carNumber])
         #new_discounted_price=vehicle(car). want to replace price with discounted price
         #percant_discount=discount/100
         #new_price=percant_discount * 
