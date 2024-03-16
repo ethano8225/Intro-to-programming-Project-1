@@ -37,17 +37,7 @@ while True:
         dealer.info(currentVehiclesList)
 
     if option=="3":
-        i = 0
-        while i != 1:
-            carID = int(input("Which vehicle do you want to remove (enter a number): "))
-            if carID <= len(defaultVehiclesList):
-                defaultVehiclesList.remove(defaultVehiclesList[carID-1])
-                i = 1
-            elif carID <= len(newVehicles):
-                newVehicles.remove(newVehicles[carID-1])
-                i = 1
-            elif carID > len(defaultVehiclesList) or carID > len(newVehicles):
-                print("You entered an invalid number.")
+        dealer.removeVehicle(defaultVehiclesList,newVehicles)
     
     if option=="4":
         newVehicles+=[dealer.add_new_vehicle()]
