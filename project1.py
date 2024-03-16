@@ -41,15 +41,30 @@ while True:
         vehicles=dealer.add_new_vehicle(vehicles) # sends current vehicle list to add_new... function, should return same list 
         dealer.display(vehicles)                  # WITH extra vehicle added    
     """if option=="5":
-        test5
+        test5"""
     if option=="6":            
-        test6"""
+        currentVehiclesList = (defaultVehiclesList + newVehicles)
+        minprice=int(input("please select a minimum price: "))
+        maxprice=int(input("please select a maximum price: "))
+        #run a loop to find all numbers fitting conditional if statement to see if they are between min and max
+        for i in range(0,len(currentVehiclesList),1):
+            currentvehicle=currentVehiclesList[i]
+            currentvehicleprice=int(currentvehicle[4])
+            if currentvehicleprice >= minprice and currentvehicleprice <=maxprice:
+                print(currentvehicle)
+            else:
+                continue    
+
     if option=="7":
-        from dealer_tool import dealer
-        car = int(input("Which vehicle do you want to discount: "))
-        vehicles = dealer.carlist(car+1)
-        discount = input("What percent discount (0-100): ")   
-        print(car)
+        currentVehiclesList = (defaultVehiclesList + newVehicles)
+        carNumber = int(input("Which vehicle do you want to discount: "))-1
+        discount = int(input("What percent discount (0-100): "))  
+        selectedVehicle = currentVehiclesList[carNumber]
+        priceVehicle = selectedVehicle[4]
+        priceVehicle= int(priceVehicle)
+        newprice=int(priceVehicle-(priceVehicle*discount/100))
+        selectedVehicle[4]=str(newprice)
+        print(currentVehiclesList[carNumber])
         #new_discounted_price=vehicle(car). want to replace price with discounted price
         #percant_discount=discount/100
         #new_price=percant_discount * 
