@@ -41,13 +41,36 @@ while True:
         print("\n****TEST the add_new_vehicle function****")
         vehicles=dealer.add_new_vehicle(vehicles) # sends current vehicle list to add_new... function, should return same list 
         dealer.display(vehicles)                  # WITH extra vehicle added    
-    """if option=="5":
-        test5"""
+    if option=="5":
+        currentVehiclesList = (defaultVehiclesList + newVehicles)
+        firstselectedvehicle=int(input("first vehicle (enter a number):"))-1
+        secondselectedvehicle=int(input("second vehicle (enter a number):"))-1
+        vehicleinfo1=currentVehiclesList[firstselectedvehicle]
+        vehicleinfo2=currentVehiclesList[secondselectedvehicle]
+        print(vehicleinfo1[0],vehicleinfo1[1],"vs",vehicleinfo2[0],vehicleinfo2[1],) #printing the title
+        vehiclemake1=vehicleinfo1[1]
+        vehiclemake2=vehicleinfo2[1]
+        if vehiclemake1==vehiclemake2:  
+            print("the two vehicles are the same makes")
+        else:
+            print("the two vehicles are different makes")
+        year1=int(vehicleinfo1[2])
+        year2=int(vehicleinfo2[2])
+        if year1>year2:     #comparing year of the cars
+            print("the first vehicle is newer.")
+        elif year1<year2:
+            print("the second vehicle is newer.")
+        else:
+            print("they where made the same year.")
+        if int(vehicleinfo1[4])>int(vehicleinfo2[4]):
+            print("the first vehicle costs more")
+        else:
+            print("the second vehicle costs more")
+
     if option=="6":            
         currentVehiclesList = (defaultVehiclesList + newVehicles)
         minprice=int(input("please select a minimum price: "))
         maxprice=int(input("please select a maximum price: "))
-        #run a loop to find all numbers fitting conditional if statement to see if they are between min and max
         for i in range(0,len(currentVehiclesList),1):
             currentvehicle=currentVehiclesList[i]
             currentvehicleprice=int(currentvehicle[4])
@@ -66,13 +89,6 @@ while True:
         newprice=int(priceVehicle-(priceVehicle*discount/100))
         selectedVehicle[4]=str(newprice)
         print(currentVehiclesList[carNumber])
-        #new_discounted_price=vehicle(car). want to replace price with discounted price
-        #percant_discount=discount/100
-        #new_price=percant_discount * 
-        #print(new_price)
-        #break
-        #dealer.discounted_vehicle(car,discount,test7.vehicles)
-        #test7
 
 
 # Code reaches here after the loop ends
