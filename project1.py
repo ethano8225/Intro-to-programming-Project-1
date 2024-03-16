@@ -30,7 +30,7 @@ while True:
     """ BEGIN MAKING YOUR CODE HERE """
     if option=="1":
         currentVehiclesList = (defaultVehiclesList + newVehicles)
-        dealer.display(defaultVehiclesList)
+        dealer.display(currentVehiclesList)
     if option=="2":
         currentVehiclesList = (defaultVehiclesList + newVehicles)
         dealer.info(currentVehiclesList)

@@ -6,15 +6,6 @@ def display_menu():
 
 #### To complete (all functions below)
 
-def discounted_vehicle(car_that_customer_want_discount, percent_discount, vehicleslist):
-    if percent_discount < 0 or percent_discount > 100:
-        print("Invalid discount!")
-    else:
-        vehicle = vehicleslist[int(car_that_customer_want_discount)-1]
-        new_discounted_price = float(vehicle[4])*float(percent_discount/100)
-        return new_discounted_price
-    return 0
-
 
 def display(vehicles_list):
     print("Car #"+"\t"+"Make","Model","Year","Mileage","Price($)",sep="\t\t")
@@ -39,11 +30,39 @@ def display(vehicles_list):
 
 
 def info(vehicles_list):
-    
-    
-    
-    return 0#more info on the selected cars?
+    print("#Vehicles",str(len(vehicles_list)),"\n")
+    lessthan10 = 0
+    tento20 = 0
+    twentyTo30 = 0
+    thirtyTo40 = 0
+    fourtyup = 0
+    for i in vehicles_list:
+        if int(i[4]) < 10000:
+            lessthan10 = lessthan10+1
+        elif int(i[4]) >= 10000 and int(i[4]) < 20000:
+            tento20 = tento20+1
+        elif int(i[4]) >= 20000 and int(i[4]) < 30000:
+            twentyTo30 = twentyTo30+1
+        elif int(i[4]) >= 30000 and int(i[4]) < 40000:
+            thirtyTo40 = thirtyTo40+1
+        elif int(i[4]) >= 40000:
+            fourtyup = fourtyup+1
 
+
+    print("<10,000 : ",100*(lessthan10/len(vehicles_list)),"%",sep="")
+    print("10,000s : ",100*(tento20/len(vehicles_list)),"%",sep="")
+    print("20,000s : ",100*(twentyTo30/len(vehicles_list)),"%",sep="")
+    print("30,000s : ",100*(thirtyTo40/len(vehicles_list)),"%",sep="")
+    print(">=40,000 : ",100*(fourtyup/len(vehicles_list)),"%\n",sep="")
+
+    total = 0
+    i = 0
+    while i < len(vehicles_list):
+        vehicle = vehicles_list[i]
+        price = int(vehicle[4])
+        total = total + price
+        i = i + 1
+    print("Mean Price:",str(total/len(vehicles_list)))
 
 def add_new_vehicle(vehicles_list):
 
