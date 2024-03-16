@@ -52,4 +52,3 @@ def add_new_vehicle(vehicles_list):
     vehicles_list += new_car #adds a new car to the end of the list
     
     return vehicles_list #Vehicle added to the list.
-
