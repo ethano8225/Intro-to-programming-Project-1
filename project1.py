@@ -27,10 +27,9 @@ while True:
     
     if option=="":
         break
-    ''' BEGIN MAKING YOUR CODE HERE '''
+    """ BEGIN MAKING YOUR CODE HERE """
     if option=="1":
         currentVehiclesList = (defaultVehiclesList + newVehicles)
-        print("\n****TEST vehicle data and display function****")
         dealer.display(defaultVehiclesList)
     if option=="2":
         currentVehiclesList = (defaultVehiclesList + newVehicles)

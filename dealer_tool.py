@@ -17,19 +17,20 @@ def discounted_vehicle(car_that_customer_want_discount, percent_discount, vehicl
 
 
 def display(vehicles_list):
-    print("Make","Model","Year","Mileage","Price($)",sep="\t\t")
+    print("Car #"+"\t"+"Make","Model","Year","Mileage","Price($)",sep="\t\t")
+    print("---------------------------------------------------------------------------------")
     i = 0
 
     while i < len(vehicles_list):    # This is terrible code but the seperator \t is not working nicely when just used as
         vehicle = vehicles_list[i]   # the seperator, so i must test for different lengths and adjust accordingly
         if len(vehicle[0]) > 8 and len(vehicle[1]) >= 8:
-            print(vehicle[0],vehicle[1],vehicle[2]+"\t\t"+vehicle[3]+"\t\t"+vehicle[4],"1",sep="\t")
+            print(str(i+1),vehicle[0],vehicle[1],vehicle[2]+"\t\t"+vehicle[3]+"\t\t"+vehicle[4],sep="\t")
         elif len(vehicle[0]) > 8 and len(vehicle[1]) < 8:
-            print(vehicle[0]+"\t"+vehicle[1],vehicle[2],vehicle[3],vehicle[4],"2",sep="\t\t")
+            print(str(i+1)+"\t"+vehicle[0]+"\t"+vehicle[1],vehicle[2],vehicle[3],vehicle[4],sep="\t\t")
         elif len(vehicle[0]) <= 8 and len(vehicle[1]) >= 8:
-            print(vehicle[0],vehicle[1]+"\t"+vehicle[2],vehicle[3],vehicle[4],"3",sep="\t\t")
+            print(str(i+1)+"\t"+vehicle[0],vehicle[1]+"\t"+vehicle[2],vehicle[3],vehicle[4],sep="\t\t")
         else:
-            print(vehicle[0],vehicle[1],vehicle[2],vehicle[3],vehicle[4],"4",sep='\t\t')
+            print(str(i+1)+"\t"+vehicle[0],vehicle[1],vehicle[2],vehicle[3],vehicle[4],sep='\t\t')
         i = i+1
 
         # We probably need to write a program that loops here to iterate through every
@@ -51,4 +52,3 @@ def add_new_vehicle(vehicles_list):
     vehicles_list += new_car #adds a new car to the end of the list
     
     return vehicles_list #Vehicle added to the list.
-
