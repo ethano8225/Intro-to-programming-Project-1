@@ -7,18 +7,17 @@ print("Dealership Vehicle Management Tool")
 print("==================================")
 print("")
 
-vehicle1 =["Toyota",    "Camry",    "2018","45000","20000"]
-vehicle2 =["Ford",      "Escape",   "2019","30000","23500"]
-vehicle3 =["Honda",     "Accord",   "2017","60000","16200"]
-vehicle4 =["Chevrolet", "Silverado","2020","25000","41000"]
-vehicle5 =["BMW",       "3 Series", "2016","60000","20500"]
-vehicle6 =["Nissan",    "Rogue",    "2019","40000","17800"]
-vehicle7 =["Hyundai",   "Sonata",   "2018","42000","16500"]
-vehicle8 =["Jeep",      "Wrangler", "2021","15000","32000"]
-vehicle9 =["Ford",      "Mustang",  "2015","50000","22000"]
-vehicle10=["Volkswagen","Golf",     "2017","38000","17800"]
-defaultVehiclesList=[vehicle1,vehicle2,vehicle3,vehicle4,vehicle5,vehicle6,vehicle7,vehicle8,vehicle9,vehicle10]
-newVehicles = []
+v1 =["Toyota",    "Camry",    "2018","45000","20000"]
+v2 =["Ford",      "Escape",   "2019","30000","23500"]
+v3 =["Honda",     "Accord",   "2017","60000","16200"]
+v4 =["Chevrolet", "Silverado","2020","25000","41000"]
+v5 =["BMW",       "3 Series", "2016","60000","20500"]
+v6 =["Nissan",    "Rogue",    "2019","40000","17800"]
+v7 =["Hyundai",   "Sonata",   "2018","42000","16500"]
+v8 =["Jeep",      "Wrangler", "2021","15000","32000"]
+v9 =["Ford",      "Mustang",  "2015","50000","22000"]
+v10=["Volkswagen","Golf",     "2017","38000","17800"]
+vehiclesList=[v1,v2,v3,v4,v5,v6,v7,v8,v9,v10]
 
 #This While loop will keep asking for user inputs until the they simply press enter.
 while True:
@@ -29,25 +28,22 @@ while True:
         break
     """ BEGIN MAKING YOUR CODE HERE """
     if option=="1":
-        currentVehiclesList = (defaultVehiclesList + newVehicles)
-        dealer.display(currentVehiclesList)
+        dealer.display(vehiclesList)
 
     if option=="2":
-        currentVehiclesList = (defaultVehiclesList + newVehicles)
-        dealer.info(currentVehiclesList)
+        dealer.info(vehiclesList)
 
     if option=="3":
-        dealer.removeVehicle(defaultVehiclesList,newVehicles)
+        vehiclesList = dealer.removeVehicle(vehiclesList)
     
     if option=="4":
-        newVehicles+=[dealer.add_new_vehicle()]
+        vehiclesList = [dealer.add_new_vehicle()]
 
     if option=="5":
-        currentVehiclesList = (defaultVehiclesList + newVehicles)
         firstselectedvehicle=int(input("First vehicle (enter a number):"))-1
         secondselectedvehicle=int(input("Second vehicle (enter a number):"))-1
-        vehicleinfo1=currentVehiclesList[firstselectedvehicle]
-        vehicleinfo2=currentVehiclesList[secondselectedvehicle]
+        vehicleinfo1=vehiclesList[firstselectedvehicle]
+        vehicleinfo2=vehiclesList[secondselectedvehicle]
         print(vehicleinfo1[0],vehicleinfo1[1],"vs.",vehicleinfo2[0],vehicleinfo2[1],) #printing the title
         vehiclemake1=vehicleinfo1[1]
         vehiclemake2=vehicleinfo2[1]
@@ -69,13 +65,12 @@ while True:
             print("The second vehicle costs more.")
 
     if option=="6":            
-        currentVehiclesList = (defaultVehiclesList + newVehicles)
         minprice=int(input("Please select a minimum price: "))
         maxprice=int(input("Please select a maximum price: "))
         print("")
         count = 0
-        for i in range(0,len(currentVehiclesList),1):
-            currentvehicle=currentVehiclesList[i]
+        for i in range(0,len(vehiclesList),1):
+            currentvehicle=vehiclesList[i]
             currentvehicleprice=int(currentvehicle[4])
             if currentvehicleprice >= minprice and currentvehicleprice <=maxprice:
                 print(currentvehicle[0],currentvehicle[1],currentvehicle[4])
@@ -86,11 +81,9 @@ while True:
         print("\nTotal number of vehicles:",str(count))
 
     if option=="7":
-
-        currentVehiclesList = (defaultVehiclesList + newVehicles)
         carNumber = int(input("Which vehicle do you want to discount: "))-1
         discount = float(input("What percent discount (0-100): "))  
-        selectedVehicle = currentVehiclesList[carNumber]
+        selectedVehicle = vehiclesList[carNumber]
         print("Vehicle:",selectedVehicle[0])
 
         priceVehicle = selectedVehicle[4]
@@ -101,8 +94,6 @@ while True:
         newPrice=int(priceVehicle-(priceVehicle*discount/100))
         print("New Price:",newPrice)
         selectedVehicle[4]=str(newPrice)
-
-
 
 
 

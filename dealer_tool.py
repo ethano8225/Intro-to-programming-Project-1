@@ -56,17 +56,13 @@ def info(vehicles_list):
         i = i + 1
     print("Mean Price:",str(total/len(vehicles_list)))
 
-def removeVehicle(defaultVehiclesList,newVehicles):
-    i = 0
-    while i != 1:           #error check at bottom to ask what car wants to be removed again if invalid number is given
+def removeVehicle(vehiclesList):
+    while True:           #error check at bottom to ask what car wants to be removed again if invalid number is given
         carID = int(input("Which vehicle do you want to remove (enter a number): "))
-        if carID <= len(defaultVehiclesList):
-            defaultVehiclesList.remove(defaultVehiclesList[carID-1])
-            i = 1
-        elif (carID-len(defaultVehiclesList)) <= len(newVehicles):
-            newVehicles.remove(newVehicles[carID-1-len(defaultVehiclesList)])
-            i = 1
-        elif carID > len(defaultVehiclesList) or carID > len(newVehicles):
+        if carID <= len(vehiclesList):                          #carID is in the list
+            vehiclesList = (vehiclesList[:(carID-1)] + vehiclesList[carID:])
+            return vehiclesList
+        elif carID > len(vehiclesList) or carID < 0:         #carID is not in list
             print("You entered an invalid number.")
 
 def add_new_vehicle():
@@ -77,4 +73,4 @@ def add_new_vehicle():
     Price = input("Enter Price: ")
     new_car = [Make,Model,Year,Mileage,Price]
     
-    return new_car #Vehicle added to the newVehicles list when it is passed back
+    return new_car #Vehicle added to the vehiclesList list when it is passed back
