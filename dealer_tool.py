@@ -64,10 +64,12 @@ def info(vehicles_list):
         i = i + 1
     print("Mean Price:",str(total/len(vehicles_list)))
 
-def add_new_vehicle(vehicles_list):
-
-    #Ask for a description of the car that needs to be added
-    new_car = [input("What is the make"),input("What is the model"),input("What year"),input("What is the mileage"),input("What is the price")]
-    vehicles_list += new_car #adds a new car to the end of the list
+def add_new_vehicle():
+    Make = input("Enter Make: ")
+    Model = input("Enter Model: ")                           #Ask for a description of the car that needs to be added
+    Year = input("Enter Year: ")
+    Mileage = input("Enter Mileage: ")
+    Price = input("Enter Price: ")
+    new_car = [Make,Model,Year,Mileage,Price]
     
-    return vehicles_list #Vehicle added to the list.
+    return new_car #Vehicle added to the list

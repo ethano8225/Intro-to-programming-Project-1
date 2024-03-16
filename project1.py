@@ -37,9 +37,7 @@ while True:
     """if option=="3":
         test3"""
     if option=="4":
-        print("\n****TEST the add_new_vehicle function****")
-        vehicles=dealer.add_new_vehicle(vehicles) # sends current vehicle list to add_new... function, should return same list 
-        dealer.display(vehicles)                  # WITH extra vehicle added    
+        newVehicles+=[dealer.add_new_vehicle()]
     if option=="5":
         currentVehiclesList = (defaultVehiclesList + newVehicles)
         firstselectedvehicle=int(input("first vehicle (enter a number):"))-1
@@ -87,7 +85,6 @@ while True:
         priceVehicle= int(priceVehicle)
         newprice=int(priceVehicle-(priceVehicle*discount/100))
         selectedVehicle[4]=str(newprice)
-        print(currentVehiclesList[carNumber])
 
 
 # Code reaches here after the loop ends
