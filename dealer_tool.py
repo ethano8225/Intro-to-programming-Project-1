@@ -74,3 +74,61 @@ def add_new_vehicle():
     new_car = [Make,Model,Year,Mileage,Price]
     
     return new_car #Vehicle added to the vehiclesList list when it is passed back
+
+def compareVehicles(vehiclesList):
+    firstVehicle=int(input("First vehicle (enter a number):"))-1
+    secondVehicle=int(input("Second vehicle (enter a number):"))-1
+    vehicleInfo1=vehiclesList[firstVehicle]         #set vehicleInfo to each selected option
+    vehicleInfo2=vehiclesList[secondVehicle]
+
+    print(vehicleInfo1[0],vehicleInfo1[1],"vs.",vehicleInfo2[0],vehicleInfo2[1],) #printing the title
+
+    vehiclemake1=vehicleInfo1[1]
+    vehiclemake2=vehicleInfo2[1]            #set vehicle make to the make of each car, test if they are the same
+    if vehiclemake1==vehiclemake2:          #or different
+        print("The two vehicles are the same makes.")
+    else:
+        print("The two vehicles are different makes.")
+
+    year1=int(vehicleInfo1[2])
+    year2=int(vehicleInfo2[2])
+    if year1>year2:     #comparing year of the cars
+        print("The first vehicle is newer.")
+    elif year1<year2:
+        print("The second vehicle is newer.")
+    else:
+        print("They where made the same year.")
+    if int(vehicleInfo1[4])>int(vehicleInfo2[4]):
+        print("The first vehicle costs more.")
+    else:
+        print("The second vehicle costs more.")
+
+def searchFunc(vehiclesList):
+    minprice=int(input("Please select a minimum price: "))
+    maxprice=int(input("Please select a maximum price: "))
+    print("")
+    count = 0
+    for i in range(0,len(vehiclesList),1):
+        currentvehicle=vehiclesList[i]
+        currentvehicleprice=int(currentvehicle[4])
+        if currentvehicleprice >= minprice and currentvehicleprice <=maxprice:
+            print(currentvehicle[0],currentvehicle[1],currentvehicle[4])
+            count=count+1
+        else:
+            continue    
+    print("\nTotal number of vehicles:",str(count))
+
+def discountedCar(vehiclesList):
+    carNumber = int(input("Which vehicle do you want to discount: "))-1
+    discount = float(input("What percent discount (0-100): "))  
+    selectedVehicle = vehiclesList[carNumber]
+    print("Vehicle:",selectedVehicle[0])
+
+    priceVehicle = selectedVehicle[4]
+    print("Price:",priceVehicle)
+    print("Discount:",((discount/100)*int(priceVehicle)))
+
+    priceVehicle= int(priceVehicle)
+    newPrice=int(priceVehicle-(priceVehicle*discount/100))
+    print("New Price:",newPrice)
+    selectedVehicle[4]=str(newPrice)
