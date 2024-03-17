@@ -1,6 +1,6 @@
 '''----------------Import Modules----------------'''
 import dealer_tool as dealer
-
+# By Ethan O'Connor and Ryan Blanchette
 '''----------------Main program starts here----------------'''
 print("\n==================================")
 print("Dealership Vehicle Management Tool")
@@ -27,7 +27,7 @@ while True:
     if option=="":
         break
     """ BEGIN MAKING YOUR CODE HERE """
-    
+    # By Ethan O'Connor and Ryan Blanchette
     if option=="1":
         dealer.display(vehiclesList)                        # display info of vehicles
 

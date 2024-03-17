@@ -3,7 +3,7 @@ def display_menu():
     """display the menu of options"""
     print("\n1-List; 2-Info; 3-Remove; 4-Insert; 5-Compare; 6-Search; 7-Discount")
 
-
+# By Ethan O'Connor and Ryan Blanchette
 #### To complete (all functions below)
 
 
