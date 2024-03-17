@@ -98,8 +98,10 @@ def compareVehicles(vehiclesList):
         print("They where made the same year.")
     if int(vehicleInfo1[4])>int(vehicleInfo2[4]):
         print("The first vehicle costs more.")
-    else:
+    elif int(vehicleInfo1[4])<int(vehicleInfo2[4]):
         print("The second vehicle costs more.")
+    else:
+        print("The vehicles cost the same")
 
 def searchFunc(vehiclesList):
     minprice=int(input("Please select a minimum price: "))
@@ -118,7 +120,19 @@ def searchFunc(vehiclesList):
 
 def discountedCar(vehiclesList):
     carNumber = int(input("Which vehicle do you want to discount: "))-1
+    while 0>carNumber or len(vehiclesList)-1<carNumber:
+        if 0<=carNumber<=len(vehiclesList)-1:
+            break
+        else:
+            print("vehicle not found")
+            carNumber = int(input("Which vehicle do you want to discount: "))-1  
     discount = float(input("What percent discount (0-100): "))  
+    while 0>discount or 100<discount:
+        if 0<=discount<=100:
+            break
+        else:
+            print("invalid discount")
+            discount = float(input("What percent discount (0-100): ")) 
     selectedVehicle = vehiclesList[carNumber]
     print("Vehicle:",selectedVehicle[0])
 
