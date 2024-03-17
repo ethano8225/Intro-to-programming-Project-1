@@ -55,9 +55,9 @@ def info(vehicles_list):
     print("Mean Price:",str(total/len(vehicles_list)))
 
 def removeVehicle(vehiclesList):
-    while True:           #error check at bottom to ask what car wants to be removed again if invalid number is given
+    while True:                                             #error check at bottom to ask what car wants to be removed again if invalid number is given
         carID = int(input("Which vehicle do you want to remove (enter a number): "))
-        if carID <= len(vehiclesList):                          #carID is in the list
+        if carID <= len(vehiclesList):                       #carID is in the list
             vehiclesList = (vehiclesList[:(carID-1)] + vehiclesList[carID:])
             return vehiclesList
         elif carID > len(vehiclesList) or carID < 0:         #carID is not in list
@@ -65,25 +65,25 @@ def removeVehicle(vehiclesList):
 
 def add_new_vehicle():
     Make = input("Enter Make: ")
-    Model = input("Enter Model: ")                           #Ask for a description of the car that needs to be added
+    Model = input("Enter Model: ")                          #Ask for a description of the car that needs to be added
     Year = input("Enter Year: ")
     Mileage = input("Enter Mileage: ")
     Price = input("Enter Price: ")
     new_car = [Make,Model,Year,Mileage,Price]
     
-    return new_car #Vehicle added to the vehiclesList list when it is passed back
+    return new_car                                          #Vehicle added to the vehiclesList list when it is passed back
 
 def compareVehicles(vehiclesList):
     firstVehicle=int(input("First vehicle (enter a number):"))-1
     secondVehicle=int(input("Second vehicle (enter a number):"))-1
-    vehicleInfo1=vehiclesList[firstVehicle]         #set vehicleInfo to each selected option
+    vehicleInfo1=vehiclesList[firstVehicle]                 #set vehicleInfo to each selected option
     vehicleInfo2=vehiclesList[secondVehicle]
 
     print(vehicleInfo1[0],vehicleInfo1[1],"vs.",vehicleInfo2[0],vehicleInfo2[1],) #printing the title
 
     vehiclemake1=vehicleInfo1[1]
-    vehiclemake2=vehicleInfo2[1]            #set vehicle make to the make of each car, test if they are the same
-    if vehiclemake1==vehiclemake2:          #or different
+    vehiclemake2=vehicleInfo2[1]                            #set vehicle make to the make of each car, test if they are the same
+    if vehiclemake1==vehiclemake2:                          #or different
         print("The two vehicles are the same makes.")
     else:
         print("The two vehicles are different makes.")
