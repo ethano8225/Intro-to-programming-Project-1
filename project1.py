@@ -27,26 +27,27 @@ while True:
     if option=="":
         break
     """ BEGIN MAKING YOUR CODE HERE """
+    
     if option=="1":
-        dealer.display(vehiclesList)
+        dealer.display(vehiclesList)                        # display info of vehicles
 
     if option=="2":
-        dealer.info(vehiclesList)
+        dealer.info(vehiclesList)                           # calls info function from dealer, displays required info
 
     if option=="3":
-        vehiclesList = dealer.removeVehicle(vehiclesList)
+        vehiclesList = dealer.removeVehicle(vehiclesList)   # removes user-selected car
     
     if option=="4":
-        vehiclesList = [dealer.add_new_vehicle()]
+        vehiclesList = [dealer.add_new_vehicle()]           # adds a new vehicle to the list
 
     if option=="5":
-        dealer.compareVehicles(vehiclesList)
+        dealer.compareVehicles(vehiclesList)                # compares two user selected vehicles
 
     if option=="6":            
-        dealer.searchFunc(vehiclesList)
+        dealer.searchFunc(vehiclesList)                     # searches for vehicles in a certain price range
 
     if option=="7":
-        dealer.discountedCar(vehiclesList)
+        dealer.discountedCar(vehiclesList)                  # discounts a user-selected car
 
 
 
